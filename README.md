@@ -1,10 +1,6 @@
 # vue-has-error-laravel
-#### update: this directive is for vue 1.x. a vue 2.0 compatible version is available by theomessin [here](https://github.com/theomessin/vue-chat-scroll).  
-## a vue.js directive that keeps an element scrolled to the bottom
-
-
-vue-sticky-scroll keeps an eye on your element and whenever content is added inside of it, it scrolls down so that the viewer can remain focused on the newest content!  
-
+#### update: this directive is for vue 1.x. a vue 2.0 compatible version is available by alvarez25leo [here](https://github.com/alvarez25leo/vue-has-error-laravel).  
+ 
 
 ### install  
 
