@@ -20,6 +20,48 @@ import 'vue-has-error-laravel';
 
 ### usage instructions  
 
+```javascript
+<template>
+
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            buttonText:'Guardar cambios',
+            buttonDisable:false,
+            user: {
+                lastname: ''
+            },
+            errors:[],
+        }
+    },
+    methods:{
+        updateProfile(event){
+            this.buttonDisable=true;
+            this.buttonText = 'Guardando cambios...';
+            const formData = new FormData(event.target)
+            axios.post(`${this.apiwebUrl}user/data/update`, formData)
+            .then((resp)=> {
+                this.errors = []
+                this.buttonDisable=false;
+                this.buttonText = 'Guardar cambios';
+            })
+            .catch((error)=> {
+                if (error.response.status == 422) {
+                    this.errors = error.response.data.errors;
+                }
+                this.buttonDisable=false;
+                this.buttonText = 'Guardar cambios';
+            });
+        }
+    }
+}
+</script>
+
+```
+
 Add `v-has-error` as an attribute on the element:
 
 ```html
