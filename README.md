@@ -2,7 +2,7 @@
 #### Actualización: esta directiva es para vue 2.x. [here](https://github.com/alvarez25leo/vue-has-error-laravel).  
  
 
-### install  
+### instalación
 
 NPM:  
 ```bash
@@ -17,7 +17,7 @@ var vueHasErrorLaravel = require('vue-has-error-laravel');
 import 'vue-has-error-laravel';
 ```
 
-### usage instructions  
+### instrucciones de uso 
 
 ```javascript
 <template>
@@ -75,7 +75,7 @@ export default {
 
 ```
 
-Add `v-has-error` as an attribute on the element:
+Agrega `v-has-error` el attribute a tu elemento:
 
 ```html
 <div class="col-12 col-sm-12 col-md-6 col-lg-6">
