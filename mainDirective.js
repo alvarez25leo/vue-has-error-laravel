@@ -1,13 +1,4 @@
-(function() {
-
-  // if we are in node.js enviro, require vue
-  try {
-    var Vue = require('vue');
-  } catch (e) {
-    // no worries, in browser enviro Vue should already be global
-  }
-
-  var vueHasErrorLaravel = Vue.directive('has-error', (el, binding) => {
+  const vueHasErrorLaravelDirective = Vue.directive('has-error', (el, binding) => {
     if (binding.value && Array.isArray(binding.value)) {
         if (binding.value.length) {
             let nodes = el.nextSibling
@@ -28,11 +19,15 @@
     }
 })
 
-  // check whether we are in node.js enviro
-  try {
-    module.exports = vueHasErrorLaravel;
-  } catch (e) {
-    // no worries, our directive will just be registered in browser
-  }
 
-})();
+var vueHasErrorLaravel = {
+  install: (Vue, options) => {
+    vueHasErrorLaravelDirective
+  }
+};
+
+export default vueHasErrorLaravel;
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(vueHasErrorLaravel)
+}

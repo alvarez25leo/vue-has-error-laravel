@@ -1,6 +1,6 @@
 {
   "name": "vue-has-error-laravel",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Directive de vue.js que permite mostrar errores devueltos por laravel.",
   "main": "mainDirective.js",
   "scripts": {
