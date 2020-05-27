@@ -1,11 +1,10 @@
 # vue-has-error-laravel
-#### update: this directive is for vue 1.x. a vue 2.0 compatible version is available by alvarez25leo [here](https://github.com/alvarez25leo/vue-has-error-laravel).  
+#### Actualización: esta directiva es para vue 2.x. [here](https://github.com/alvarez25leo/vue-has-error-laravel).  
  
 
 ### install  
 
 NPM:  
-note: vue-has-error-laravel requires vue 1.x; check your version by running `npm list vue`; a 2.0 compatible version is available [here](https://github.com/alvarez25leo/vue-has-error-laravel)  
 ```bash
 npm i vue-has-error-laravel
 ```
