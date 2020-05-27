@@ -22,7 +22,21 @@ import 'vue-has-error-laravel';
 
 ```javascript
 <template>
-
+<form method="post" @submit.prevent="updateProfile" enctype="multipart/form-data">
+   <div class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="form-group">
+              <label>Apellidos</label>
+              <input type="text" name="lastname" v-has-error="errors.lastname" v-model="user.lastname"  class="form-control" >
+            </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="mt-2">
+               <button type="submit" class="btn btn-primary" :disabled="buttonDisable">{{buttonText}}</button>
+           </div>
+        </div>
+     </div>
+ </form>
 </template>
 
 <script>
