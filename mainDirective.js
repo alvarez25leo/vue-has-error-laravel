@@ -1,28 +1,15 @@
-  const vueHasErrorLaravelDirective = Vue.directive('has-error', (el, binding) => {
-    if (binding.value && Array.isArray(binding.value)) {
-        if (binding.value.length) {
-            let nodes = el.nextSibling
-            if (el.nextSibling) {
-                nodes.parentNode.removeChild(nodes)
-            }
-            el.classList.add('is-invalid')
-            el.insertAdjacentHTML("afterend", `<div class="invalid-feedback">${binding.value[0]}</div>`);
-        } else {
-            if (el.classList.contains('is-invalid')) {
-                el.classList.remove('is-invalid')
-            }
-        }
-    } else {
-        if (el.classList.contains('is-invalid')) {
-            el.classList.remove('is-invalid')
-        }
-    }
-})
+/**
+* @name VueJS vueHasErrorLaravel (vue-has-error-laravel)
+* @description Permite mostrar errores de laravel
+* @author Leonardo Manuel Alvarez <leonardomanuel.alv@gmail.com>
+* @file vue-chat-scroll plugin definition
+*/
 
+import vHasErrorLaravel from './directives/vue-has-error-laravel.js';
 
 var vueHasErrorLaravel = {
   install: (Vue, options) => {
-    vueHasErrorLaravelDirective
+    Vue.directive('has-error', vHasErrorLaravel)
   }
 };
 
@@ -31,3 +18,4 @@ export default vueHasErrorLaravel;
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(vueHasErrorLaravel)
 }
+
