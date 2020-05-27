@@ -8,7 +8,7 @@ NPM:
 ```bash
 npm i vue-has-error-laravel
 ```
-Require it in your vue.js component file:
+Requerirlo en su archivo de componente vue.js:
 
 ```javascript
 // ES5
