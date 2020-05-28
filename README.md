@@ -1,23 +1,22 @@
 # vue-has-error-laravel
-#### Actualización: esta directiva es para vue 2.x. [here](https://github.com/alvarez25leo/vue-has-error-laravel).  
- 
+#### Actualización: esta directiva es para vue 2.x. [here](https://github.com/alvarez25leo/vue-has-error-laravel).
+
 
 ### instalación
 
-NPM:  
+NPM:
 ```bash
 npm i vue-has-error-laravel
 ```
 Requerirlo en su archivo de componente vue.js:
 
 ```javascript
-// ES5
-var vueHasErrorLaravel = require('vue-has-error-laravel');
-// ES6
-import 'vue-has-error-laravel';
+import VueHasErrorLaravel from 'vue-has-error-laravel'
+
+Vue.use(VueHasErrorLaravel)
 ```
 
-### instrucciones de uso 
+### instrucciones de uso
 
 ```javascript
 <template>
@@ -85,6 +84,10 @@ Agrega `v-has-error` el attribute a tu elemento:
        </div>
  </div>
 ```
+
+### Autor
+
+Leonardo Manuel Alvarez
 
 ### license
 
