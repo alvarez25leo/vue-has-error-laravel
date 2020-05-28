@@ -1,6 +1,6 @@
 {
   "name": "vue-has-error-laravel",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Directive de vue.js que permite mostrar errores devueltos por laravel.",
   "main": "mainDirective.js",
   "scripts": {
@@ -10,6 +10,10 @@
     "type": "git",
     "url": "https://github.com/alvarez25leo/vue-has-error-laravel.git"
   },
+  "bugs": {
+    "url": "https://github.com/alvarez25leo/vue-has-error-laravel/issues"
+  },
+  "homepage": "https://github.com/alvarez25leo/vue-has-error-laravel#readme",
   "keywords": [
     "vue",
     "vue-directive",
@@ -21,8 +25,14 @@
   ],
   "author": "Leonardo Manuel Alvarez",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alvarez25leo/vue-has-error-laravel/issues"
+  "peerDependencies": {
+    "vue": "^2.4.4"
   },
-  "homepage": "https://github.com/alvarez25leo/vue-has-error-laravel#readme"
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "rollup": "^2.3.3",
+    "rollup-plugin-babel": "^4.4.0"
+  }
 }
