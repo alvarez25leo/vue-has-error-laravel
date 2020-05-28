@@ -8,6 +8,11 @@ NPM:
 ```bash
 npm i vue-has-error-laravel
 ```
+
+<center><img width="340" alt="Validacion" src="https://i.ibb.co/wRXSyrW/validar-formulario.png"></center>
+<div><br><br></div>
+
+
 Requerirlo en su archivo de componente vue.js:
 
 ```javascript

@@ -2,7 +2,7 @@
 * @name VueJS vueHasErrorLaravel (vue-has-error-laravel)
 * @description Permite mostrar errores de laravel
 * @author Leonardo Manuel Alvarez <leonardomanuel.alv@gmail.com>
-* @file mainDirective plugin definition
+* @file mainDirective plugin definition 2020
 */
 
 import vHasErrorLaravel from './directives/v-has-error.js'
