@@ -1,4 +1,7 @@
 # vue-has-error-laravel
+
+Este directiva de vue permite mostrar errores devueltos por laravel y es 100% configurable.
+
 #### Actualización: esta directiva es para vue 2.x. [here](https://github.com/alvarez25leo/vue-has-error-laravel).
 
 
@@ -19,6 +22,17 @@ Requerirlo en su archivo de componente vue.js:
 import VueHasErrorLaravel from 'vue-has-error-laravel'
 
 Vue.use(VueHasErrorLaravel)
+```
+Configurando
+
+```javascript
+import VueHasErrorLaravel from 'vue-has-error-laravel'
+
+Vue.use(VueHasErrorLaravel,{
+    className:'is-invalid',
+    tagName:'div',
+    tagClassName:'invalid-feedback'
+})
 ```
 
 ### instrucciones de uso
@@ -93,6 +107,7 @@ Agrega `v-has-error` el attribute a tu elemento:
 ### Autor
 
 Leonardo Manuel Alvarez
+leonardomanuel.alv@gmail.com
 
 ### license
 
