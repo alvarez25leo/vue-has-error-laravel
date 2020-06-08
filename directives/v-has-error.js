@@ -1,9 +1,9 @@
 /**
-* @name VueJS vueHasErrorLaravel (vue-has-error-laravel)
-* @description Permite mostrar errores de laravel
-* @author Leonardo Manuel Alvarez <leonardomanuel.alv@gmail.com>
-* @file v-has-error plugin definition
-*/
+ * @name VueJS vueHasErrorLaravel (vue-has-error-laravel)
+ * @description Permite mostrar errores de laravel
+ * @author Leonardo Manuel Alvarez <leonardomanuel.alv@gmail.com>
+ * @file v-has-error plugin definition
+ */
 
 const vOptionsDirective = (options) => {
     const className = (options.className) ? options.className :'is-invalid'
@@ -14,48 +14,31 @@ const vOptionsDirective = (options) => {
 
 const vHasErrorLaravel = {
     bind: (el, binding, vnode) => {
-        const options = vOptionsDirective(vnode.context.$vueHasErrorLaravelOptions)
-        if (binding.value && Array.isArray(binding.value)) {
-            if (binding.value.length) {
-                el.classList.add(options.className)
-            } else {
-                if (el.classList.contains(options.className)) {
-                    el.classList.remove(options.className)
-                }
-            }
+        const { className } = vOptionsDirective(vnode.context.$vueHasErrorLaravelOptions)
+        if (binding.value && Array.isArray(binding.value) && binding.value.length) {
+            el.classList.add(className)
         } else {
-            if (el.classList.contains(options.className)) {
-                el.classList.remove(options.className)
-            }
+            el.classList.remove(className)
         }
     },
-    inserted: (el, binding, vnode)=> {
-        const options = vOptionsDirective(vnode.context.$vueHasErrorLaravelOptions)
-        if (binding.value && Array.isArray(binding.value)) {
-            if (binding.value.length) {
-                el.insertAdjacentHTML('afterend', `<${options.tagName} class="${options.tagClassName}">${binding.value[0]}</${options.tagName}>`)
-            }
+    inserted: (el, binding, vnode) => {
+        const { tagName, tagClassName } = vOptionsDirective(vnode.context.$vueHasErrorLaravelOptions)
+        if (!(binding.value && Array.isArray(binding.value) && binding.value.length)) {
+            return;
         }
+        el.insertAdjacentHTML('afterend', `<${ tagName } class="${ tagClassName }">${ binding.value[0] }</${ tagName }>`)
     },
-    update: (el, binding, vnode)=> {
-        const options = vOptionsDirective(vnode.context.$vueHasErrorLaravelOptions)
-        if (binding.value && Array.isArray(binding.value)) {
-            if (binding.value.length) {
-                let nodes = el.nextSibling
-                if (el.nextSibling) {
-                    nodes.parentNode.removeChild(nodes)
-                }
-                el.classList.add(options.className)
-                el.insertAdjacentHTML('afterend', `<${options.tagName} class="${options.tagClassName}">${binding.value[0]}</${options.tagName}>`)
-            } else {
-                if (el.classList.contains(options.className)) {
-                    el.classList.remove(options.className)
-                }
+    update: (el, binding, vnode) => {
+        const { className, tagClassName, tagName } = vOptionsDirective(vnode.context.$vueHasErrorLaravelOptions)
+        if (binding.value && Array.isArray(binding.value) && binding.value.length) {
+            let nodes = el.nextSibling
+            if (el.nextSibling) {
+                nodes.parentNode.removeChild(nodes)
             }
+            el.classList.add(className)
+            el.insertAdjacentHTML('afterend', `<${ tagName } class="${ tagClassName }">${ binding.value[0] }</${ tagName }>`)
         } else {
-            if (el.classList.contains(options.className)) {
-                el.classList.remove(options.className)
-            }
+            el.classList.remove(className)
         }
     }
 }
