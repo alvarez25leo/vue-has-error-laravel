@@ -6,7 +6,7 @@
  */
 
 import vHasErrorLaravel from './directives/v-has-error.js'
-import MixinErrorsLaravel from './mixins/errosLaravel.js';
+import MixinErrorsLaravel from './mixins/errorsLaravel.js';
 
 const vueHasErrorLaravel = {
     install: (Vue, options) => {
