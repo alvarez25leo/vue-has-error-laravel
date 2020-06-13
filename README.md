@@ -44,7 +44,7 @@ Vue.use(VueHasErrorLaravel,{
       <div class="col-12 col-sm-12 col-md-6 col-lg-6">
           <div class="form-group">
               <label>Apellidos</label>
-              <input type="text" name="lastname" v-has-error="errors.lastname" v-model="user.lastname"  class="form-control" >
+              <input type="text" name="lastname" v-has-error="'lastname'" v-model="user.lastname"  class="form-control" >
             </div>
       </div>
       <div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -58,18 +58,17 @@ Vue.use(VueHasErrorLaravel,{
 
 <script>
 export default {
-    data(){
-        return{
+    data() {
+        return {
             buttonText:'Guardar cambios',
             buttonDisable:false,
             user: {
                 lastname: ''
-            },
-            errors:[],
+            }
         }
     },
     methods:{
-        updateProfile(event){
+        updateProfile(event) {
             this.buttonDisable=true;
             this.buttonText = 'Guardando cambios...';
             const formData = new FormData(event.target)
@@ -79,9 +78,9 @@ export default {
                 this.buttonDisable=false;
                 this.buttonText = 'Guardar cambios';
             })
-            .catch((error)=> {
+            .catch((error) => {
                 if (error.response.status == 422) {
-                    this.errors = error.response.data.errors;
+                    this.$setLaravelErrors(error.response.data.errors);
                 }
                 this.buttonDisable=false;
                 this.buttonText = 'Guardar cambios';
@@ -99,7 +98,7 @@ Agrega `v-has-error` el attribute a tu elemento:
 <div class="col-12 col-sm-12 col-md-6 col-lg-6">
      <div class="form-group">
          <label>Apellidos</label>
-         <input type="text" name="lastname" v-has-error="errors.lastname" v-model="user.lastname"  class="form-control" >
+         <input type="text" name="lastname" v-has-error="'lastname'" v-model="user.lastname"  class="form-control" >
        </div>
  </div>
 ```
@@ -108,6 +107,10 @@ Agrega `v-has-error` el attribute a tu elemento:
 
 Leonardo Manuel Alvarez
 leonardomanuel.alv@gmail.com
+
+### Contributors
+
+**José Ignacio Menchaca Castro** - [IgnacioCastro0713](https://github.com/IgnacioCastro0713)
 
 ### license
 
