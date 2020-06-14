@@ -4,7 +4,7 @@
   "description": "Directive de vue.js que permite mostrar errores devueltos por laravel.",
   "main": "mainDirective.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,21 @@
     "vue": "^2.4.4"
   },
   "devDependencies": {
+    "vue": "^2.4.4",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
+    "@jest/globals": "^26.0.1",
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "rollup": "^2.3.3",
-    "rollup-plugin-babel": "^4.4.0"
+    "@vue/server-test-utils": "^1.0.3",
+    "@vue/test-utils": "^1.0.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^26.0.1",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^26.0.1",
+    "jest-serializer-vue": "^2.0.2",
+    "rollup": "^2.16.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "vue-jest": "^3.0.5",
+    "vue-template-compiler": "^2.6.11"
   }
 }
