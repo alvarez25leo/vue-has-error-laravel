@@ -24,7 +24,7 @@ localVue.mixin({
 describe('input-component-tests', () => {
 
   test('should not throw error on empty config', () => {
-    expect(() => localVue.use({}, {})).not.toThrow()
+    expect(() => localVue.use(VueHasErrorLaravel, {})).not.toThrow()
   })
 
   test('is a Vue instance', () => {
