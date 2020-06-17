@@ -31,7 +31,8 @@ import VueHasErrorLaravel from 'vue-has-error-laravel'
 Vue.use(VueHasErrorLaravel,{
     className:'is-invalid',
     tagName:'div',
-    tagClassName:'invalid-feedback'
+    tagClassName:'invalid-feedback',
+    showErrorMessage:true
 })
 ```
 
