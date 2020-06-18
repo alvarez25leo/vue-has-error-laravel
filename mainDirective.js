@@ -6,12 +6,12 @@
  */
 
 import vHasErrorLaravel from './directives/v-has-error.js'
-import MixinErrorsLaravel from './mixins/errorsLaravel.js';
+import MixinErrorsLaravel from './mixins/errorsLaravel.js'
 
 const vueHasErrorLaravel = {
     install: (Vue, options) => {
         Vue.use(MixinErrorsLaravel)
-        Vue.prototype.$vueHasErrorLaravelOptions = (options) ? options : {}
+        Vue.prototype.$vueHasErrorLaravelOptions = options ? options : {}
         Vue.prototype.$setLaravelErrors = function (laravelErrorsResponse) {
             this.$data.$errorsResponseFromLaravel = []
             if (!laravelErrorsResponse) {
@@ -19,11 +19,11 @@ const vueHasErrorLaravel = {
             }
 
             this.$data.$errorsResponseFromLaravel = laravelErrorsResponse.hasOwnProperty('errors')
-              ? laravelErrorsResponse.errors : laravelErrorsResponse
-
+                ? laravelErrorsResponse.errors
+                : laravelErrorsResponse
         }
         Vue.directive('has-error', vHasErrorLaravel)
-    }
+    },
 }
 
 export default vueHasErrorLaravel

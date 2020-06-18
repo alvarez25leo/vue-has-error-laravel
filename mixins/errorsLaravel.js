@@ -3,11 +3,11 @@ const MixinErrorsLaravel = {
         Vue.mixin({
             data() {
                 return {
-                    $errorsResponseFromLaravel: []
+                    $errorsResponseFromLaravel: [],
                 }
-            }
+            },
         })
-    }
+    },
 }
 
 export default MixinErrorsLaravel
