@@ -75,7 +75,6 @@ export default {
             const formData = new FormData(event.target)
             axios.post(`${this.apiwebUrl}user/data/update`, formData)
             .then((resp)=> {
-                this.errors = []
                 this.buttonDisable=false;
                 this.buttonText = 'Guardar cambios';
             })
