@@ -37,7 +37,7 @@ Vue.use(VueHasErrorLaravel,{
 ```
 
 Nuxt.js 
-Crer el archivo /plugins/vue-has-error-laravel.js
+Crear el archivo /plugins/vue-has-error-laravel.js
 
 
 ```javascript
