@@ -36,6 +36,24 @@ Vue.use(VueHasErrorLaravel,{
 })
 ```
 
+Nuxt.js 
+Crer el archivo /plugins/vue-has-error-laravel.js
+
+
+```javascript
+import Vue from 'vue'
+import VueHasErrorLaravel from 'vue-has-error-laravel'
+
+Vue.use(VueHasErrorLaravel)
+``` 
+Abrir el archivo nuxt.config.js
+
+```javascript
+ plugins: [
+        { ssr: false, src: '~plugins/vue-has-error-laravel.js' },
+    ],
+``` 
+
 ### instrucciones de uso
 
 ```javascript
